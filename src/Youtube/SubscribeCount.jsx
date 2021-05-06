@@ -3,6 +3,7 @@ import config from "./config";
 const Youtube = () => {
   const [subscriberValue, updateSubscriberValue] = useState(0);
   const { apiKey, channelId } = config;
+  console.log(process.env.REACT_APP_API_KEY)
   const apiCall = `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${channelId}&key=${apiKey}`;
    fetch(apiCall)
   .then((response) => response.json())
